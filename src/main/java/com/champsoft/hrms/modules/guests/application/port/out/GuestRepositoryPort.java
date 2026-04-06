@@ -1,4 +1,15 @@
 package com.champsoft.hrms.modules.guests.application.port.out;
 
-public class GuestRepositoryPort {
+import com.champsoft.hrms.modules.guests.domain.model.Guest;
+import com.champsoft.hrms.modules.guests.domain.model.GuestId;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface GuestRepositoryPort {
+    Guest save(Guest guest);
+    Optional<Guest> findById(GuestId id);
+    boolean existsByFullName(String fullName);
+    List<Guest> findAll();
+    void deleteById(GuestId id);
 }

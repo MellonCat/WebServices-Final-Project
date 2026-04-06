@@ -1,4 +1,7 @@
 package com.champsoft.hrms.modules.guests.infrastructure.persistence;
 
-public interface SpringDataGuestRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SpringDataGuestRepository extends JpaRepository<GuestJpaEntity, String> {
+    boolean existsByFullNameIgnoreCase(String fullName);
 }
