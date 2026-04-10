@@ -1,4 +1,13 @@
 package com.champsoft.hrms.modules.payment.infrastructure.persistence;
 
-public interface SpringDataPaymentRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface SpringDataPaymentRepository
+        extends JpaRepository<PaymentJpaEntity, String> {
+
+    Optional<PaymentJpaEntity> findByCardNumber(String cardNumber);
+
+    boolean existsByCardNumber(String cardNumber);
 }

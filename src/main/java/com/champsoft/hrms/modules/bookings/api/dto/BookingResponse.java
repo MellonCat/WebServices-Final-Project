@@ -1,4 +1,15 @@
 package com.champsoft.hrms.modules.bookings.api.dto;
 
-public class BookingResponse {
-}
+import java.time.LocalDate;
+
+public record BookingResponse(
+
+        String id,
+        String roomId,
+        String guestId,
+        String paymentId,
+        LocalDate startDate,
+        LocalDate endDate,
+        String status
+
+) {}

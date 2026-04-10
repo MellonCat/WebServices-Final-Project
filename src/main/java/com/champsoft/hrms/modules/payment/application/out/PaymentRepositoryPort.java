@@ -1,4 +1,23 @@
-package com.champsoft.hrms.modules.payment.application.out;
+package com.champsoft.hrms.modules.payment.application.port.out;
+
+import com.champsoft.hrms.modules.payment.domain.model.CardNumber;
+import com.champsoft.hrms.modules.payment.domain.model.Payment;
+import com.champsoft.hrms.modules.payment.domain.model.PaymentId;
+
+import java.util.List;
+import java.util.Optional;
 
 public interface PaymentRepositoryPort {
+
+    Payment save(Payment payment);
+
+    Optional<Payment> findById(PaymentId id);
+
+    Optional<Payment> findByCardNumber(CardNumber cardNumber);
+
+    boolean existsByCardNumber(CardNumber cardNumber);
+
+    List<Payment> findAll();
+
+    void deleteById(PaymentId id);
 }

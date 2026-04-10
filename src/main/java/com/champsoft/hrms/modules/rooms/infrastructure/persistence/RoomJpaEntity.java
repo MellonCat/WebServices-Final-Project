@@ -12,7 +12,7 @@ public class RoomJpaEntity {
     @Id
     public String id;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "room_number", nullable = false, unique = true)
     public String roomNumber;
 
     @Embedded
